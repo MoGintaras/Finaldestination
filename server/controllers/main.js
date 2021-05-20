@@ -31,6 +31,26 @@ module.exports = {
         await userDb.findByIdAndDelete(id)
         const users = await userDb.find()
         res.send({success: true, users})
-    }
+    },
+    updateUser: async (req, res) => {
+        const {
+            name,
+            image,
+            age,
+            email,
+            city
+        } = req.body
+
+        const newUser = new userDb()
+        newUser.name = name
+        newUser.image = image
+        newUser.age = age
+        newUser.email = email
+        newUser.city = city
+
+        newUser.save().then(data => {
+            res.send({success: true, message: "Vartotojas pridetas"})
+        })
+    },
 
 }

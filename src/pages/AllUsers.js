@@ -20,6 +20,9 @@ function AllUsers() {
         http.get(link+id).then(res => {
             setUsers(res.users)
         })}
+        function updateUser(param){
+
+        }
 
     return (
         <div className="d-flex allUsers">
@@ -33,6 +36,7 @@ function AllUsers() {
                     <p>Miestas : {item.city}</p>
 
                     <button id={item._id} onClick={deleteUser}>Istrinti vartotoja</button>
+                    <button onClick={updateUser}>Pakeisti informacija</button>
                 </div>
 
 
