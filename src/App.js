@@ -14,8 +14,8 @@ function App() {
         <Router>
             <div className="App">
                 <div className="d-flex center nav-bar">
-                    <Link className="m-20 navbtn" to="/">Home</Link>
-                    <Link className="m-20 navbtn" to="/upload">Upload</Link>
+                    <Link className="m-20 navbtn" to="/">Namai</Link>
+                    <Link className="m-20 navbtn" to="/addUser">Prideti vartotoja</Link>
                 </div>
 
                 <Switch>
