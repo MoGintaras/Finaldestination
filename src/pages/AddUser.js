@@ -22,11 +22,6 @@ function AddItems() {
         http.post('/addUser', user).then(res => {
             setMsg(res.message)
         })
-        setName("")
-        setImage("")
-        setAge("")
-        setEmail("")
-        setCity("")
     }
 
     return <div className="pageSection">

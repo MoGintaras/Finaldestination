@@ -22,17 +22,17 @@ function AllUsers() {
         })}
 
     return (
-        <div className="d-flex warehouse">
+        <div className="d-flex allUsers">
             {users.length > 0 ? users.map((item, index) =>
                 <div key={index}>
                 <div className="card">
+                    <img className="userImg" src={item.image} alt=""/>
                     <h3>Vardas : {item.name}</h3>
-                    <p className="quant">Photo : {item.image}</p>
                     <p>Elektroninis pastas : {item.email}</p>
                     <p>Amzius : {item.age}</p>
                     <p>Miestas : {item.city}</p>
 
-                    <button id={item._id} onClick={deleteUser}>Delete</button>
+                    <button id={item._id} onClick={deleteUser}>Istrinti vartotoja</button>
                 </div>
 
 

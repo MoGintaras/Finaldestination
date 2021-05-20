@@ -1,5 +1,10 @@
+body{
+  background-color: gray;
+}
 .App {
   text-align: center;
+  padding: 0;
+
 }
 
 .App-logo {
@@ -40,7 +45,53 @@
 .uploadBtn{
   cursor: pointer;
   border: 2px solid black;
+  border-radius: 10px;
   padding: 10px;
   margin: 10px;
   width: 200px;
+}
+.nav-bar{
+  background-image: url("https://images.pexels.com/photos/1835016/pexels-photo-1835016.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  padding: 20px;
+  background-position: center;
+  margin: 0px;
+  display: flex;
+  justify-content: space-around;
+}
+.navbtn{
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px;
+}
+.pageSection{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.uploadForm{
+  display: flex;
+  flex-direction: column;
+}
+.uploadForm input {
+  margin: 2px;
+  width: 200px;
+  border-radius: 10px;
+}
+.userImg{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.allUsers{
+  display: flex;
+  margin: 5px;
+}
+.card{
+  margin: 10px;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
 }

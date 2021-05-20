@@ -13,9 +13,9 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <div className="d-flex center nav-bar">
-                    <Link className="m-20 navbtn" to="/">Namai</Link>
-                    <Link className="m-20 navbtn" to="/addUser">Prideti vartotoja</Link>
+                <div className="nav-bar">
+                    <Link className="navbtn" to="/">Namai</Link>
+                    <Link className="navbtn" to="/addUser">Prideti vartotoja</Link>
                 </div>
 
                 <Switch>
