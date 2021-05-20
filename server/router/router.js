@@ -3,11 +3,9 @@ const router = express.Router()
 const controller = require('../controllers/main')
 const validateUser = require("../middle/validateUser")
 
-//
 router.post('/addUser',validateUser, controller.addUser)
 router.get('/getUsers', controller.getUsers)
 router.get('/deleteUser/:id', controller.deleteUser)
-
-
+router.post('/updateUser',validateUser, controller.updateUser)
 
 module.exports = router
