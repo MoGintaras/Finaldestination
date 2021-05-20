@@ -1,25 +1,28 @@
 module.exports = (req, res, next) => {
     const {
-        title,
-        quantity,
-        price,
+        name,
+        image,
+        age,
+        email,
+        city
     } = req.body
 
     function errorSend(message) {
         res.send({success: false, message})
     }
 
-    if(title.length > 50 || title.length < 3) {
-        return errorSend('Title length is not valid')
+    if(name.length < 2  || name.length > 15) {
+        return errorSend('Vardas negali buti trumpesnis nei 3 simboliai ir ilgesnis nei 15 simboliu.')
     }
 
-    if(quantity.length === 0) {
-        return errorSend('Quantity must be set and contain only numbers')
+    if(age.Number < 18) {
+        return errorSend('Vartotojas turi buti vyresnis negu 18 metu.')
     }
 
-    if(price.length === 0) {
-        return errorSend('Price must be set and contain only numbers')
+    if(email.indexOf("@") < 0) {
+        return errorSend('Neteisingas el.pastas')
     }
+    if(email)
 
     next()
 }

@@ -4,9 +4,9 @@ const controller = require('../controllers/main')
 const validateUser = require("../middle/validateUser")
 
 //
-// router.post('/addUser',validateUser, controller.saveItem)
-// router.get('/getUsers', controller.getItems)
-// router.get('/deleteUser/:id', controller.deleteItems)
+router.post('/addUser',validateUser, controller.addUser)
+router.get('/getUsers', controller.getUsers)
+router.get('/deleteUser/:id', controller.deleteUser)
 
 
 

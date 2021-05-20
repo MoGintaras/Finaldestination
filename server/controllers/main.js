@@ -1,25 +1,36 @@
-module.exports = (req, res, next) => {
-    const {
-        title,
-        quantity,
-        price,
-    } = req.body
+const userDb = require('../schemas/userSchema')
 
-    function errorSend(message) {
-        res.send({success: false, message})
+module.exports = {
+    addUser: (req, res) => {
+        const {
+            name,
+            image,
+            age,
+            email,
+            city
+        } = req.body
+
+        const newUser = new userDb()
+        newUser.name = name
+        newUser.image = image
+        newUser.age = age
+        newUser.email = email
+        newUser.city = city
+
+        newUser.save().then(data => {
+            res.send({success: true, message: "Vartotojas pridetas"})
+        })
+    },
+    getUsers: async (req, res) => {
+        const users = await userDb.find()
+        res.send({success: true, users})
+    },
+    deleteUser: async (req, res) => {
+        const {id} = req.params
+        console.log(id)
+        await userDb.findByIdAndDelete(id)
+        const users = await userDb.find()
+        res.send({success: true, users})
     }
 
-    if(title.length > 50 || title.length < 3) {
-        return errorSend('Title length is not valid')
-    }
-
-    if(quantity.length === 0) {
-        return errorSend('Quantity must be set and contain only numbers')
-    }
-
-    if(price.length === 0) {
-        return errorSend('Price must be set and contain only numbers')
-    }
-
-    next()
 }
